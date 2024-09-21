@@ -27,4 +27,8 @@ public class FlashCardService {
         return flashCardRepository.findById(id).orElse(null);
     }
 
+    public void deleteById(Long id) {
+        flashCardRepository.deleteById(id);
+    }
+
 }

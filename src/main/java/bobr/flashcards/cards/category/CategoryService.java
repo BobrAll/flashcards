@@ -24,4 +24,9 @@ public class CategoryService {
                 .map(Category::getName)
                 .toList();
     }
+
+    public void deleteById(String id) {
+        categoryRepository.deleteById(id);
+    }
+    
 }

@@ -57,4 +57,9 @@ public class FlashCardController {
                 .body(card.getImage());
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteCard(@PathVariable Long id) {
+        flashCardService.deleteById(id);
+    }
+
 }
