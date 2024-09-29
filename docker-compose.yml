@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:15
-    container_name: postgres_db
+    container_name: flashcards_db
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}

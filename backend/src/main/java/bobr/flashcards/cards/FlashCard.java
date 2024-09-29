@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "flash_card")
 public class FlashCard {
 
     private static final String PREFIX = "data/";
@@ -22,17 +23,22 @@ public class FlashCard {
     @Id
     @JsonIgnore
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
     @Lob
     @JsonIgnore
+    @Column(name = "image")
     private byte[] image;
 
+    @Column(name = "word")
     private String word;
 
+    @Column(name = "translation")
     private String translation;
 
     @ManyToOne
+    @JoinColumn(name = "category_name", referencedColumnName = "name")
     private Category category;
 
     @JsonGetter(value = "id")
