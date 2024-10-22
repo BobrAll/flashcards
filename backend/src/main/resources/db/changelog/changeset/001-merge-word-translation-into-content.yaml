@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: combine-word-and-translation
-      author: your_name
+      author: bobr
       changes:
         - addColumn:
             tableName: flash_card
