@@ -31,11 +31,8 @@ public class FlashCard {
     @Column(name = "image")
     private byte[] image;
 
-    @Column(name = "word")
-    private String word;
-
-    @Column(name = "translation")
-    private String translation;
+    @Column(name = "content")
+    private String content;
 
     @ManyToOne
     @JoinColumn(name = "category_name", referencedColumnName = "name")

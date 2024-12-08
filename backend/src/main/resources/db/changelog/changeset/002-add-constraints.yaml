@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-constraints
+      author: your_name
+      changes:
+        - addNotNullConstraint:
+            tableName: flash_card
+            columnName: content
+        - addNotNullConstraint:
+            tableName: category
+            columnName: name
+        - addUniqueConstraint:
+            tableName: category
+            columnNames: name
+            constraintName: unique_category_name

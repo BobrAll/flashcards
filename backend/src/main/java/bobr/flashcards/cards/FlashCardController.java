@@ -30,14 +30,12 @@ public class FlashCardController {
     @Transactional
     @PostMapping
     public void addFlashCard(
-            @RequestParam("word") String word,
-            @RequestParam("translation") String translation,
+            @RequestParam("content") String content,
             @RequestParam("category") String categoryName,
             @RequestParam("image") MultipartFile file
     ) throws IOException {
         FlashCard flashCard = FlashCard.builder()
-                .word(word)
-                .translation(translation)
+                .content(content)
                 .category(categoryService.findByName(categoryName))
                 .image(file.getBytes())
                 .build();

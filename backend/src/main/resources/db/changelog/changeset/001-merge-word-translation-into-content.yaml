@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: combine-word-and-translation
+      author: your_name
+      changes:
+        - addColumn:
+            tableName: flash_card
+            columns:
+              - column:
+                  name: content
+                  type: VARCHAR(500)
+
+        - update:
+            tableName: flash_card
+            columns:
+              - column:
+                  name: content
+                  valueComputed: word || '\n' || translation
+
+        - dropColumn:
+            tableName: flash_card
+            columnName: word
+
+        - dropColumn:
+            tableName: flash_card
+            columnName: translation
